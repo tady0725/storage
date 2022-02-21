@@ -1,0 +1,7 @@
+CREATE TABLE Addressbook
+(reg_no  INTEGER   NOT NULL,
+ reg_name   VARCHAR(128) NOT NULL,
+ reg_address VARCHAR(256) NOT NULL,
+ tel_no    CHAR(10),
+mail_address   CHAR(20),
+ PRIMARY KEY (reg_no));
