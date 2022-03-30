@@ -1,0 +1,163 @@
+
+import java.io.*;
+import java.util.*;
+//chcp 65001
+
+public class re {
+    public static void main(String[] args) {
+    	HashMap<String, String> dict1 = new HashMap<String, String>();
+    	dict1.put("去年","去年");
+    	dict1.put("會議","會議");
+    	
+    	
+        String line2 = "去年 十二月 在 舊金山 一 項 科技 會議 上 發布 的 這項 電腦 晶片 科技 突破 亦 有助 於 預防 晶片 的 微小 電路 漏電 並 減少 電路 受 幅 射 影響 造成 錯誤\n";
+        String wds = line2.replaceAll(" ", "");
+        String wd = wds.substring(0, wds.length() - 1);
+        int L = (wd.length());
+        int start = 0, end = L, reset_index = L;
+        String s;
+        while (true) 
+        {
+        	s = wd.substring(start, end);
+        	
+        	System.out.println(end);
+ 
+        	if(end!=start+1)
+        	{
+        		
+        		end-=1;
+        		System.out.println(s);
+        		
+        	}
+        	else
+        	{
+        		break;
+        		
+        	}
+        	 
+        	 /*
+        	boolean status = dict1.containsKey(s);
+        	if (status == true) {
+                int get_l = s.length();
+                String get_p = Integer.toString(start);
+                start = start + get_l - 1;
+                String end_get = Integer.toString(start);
+                String get_n = get_p + "," + end_get;    
+                end = reset_index;
+                System.out.println(start+end);
+                
+            
+            }
+            if (end == start + 1) 
+            {
+                int l_ = s.length();
+                String p_ = Integer.toString(start);
+                start = start + l_ - 1;
+                String end_ = Integer.toString(start);
+                String _n = p_ + "," + end_;
+                end = reset_index;
+                System.out.println(start+","+end);
+            }
+            if (start == L - 1)
+
+            {
+                break;
+            }
+            end -= 1;*/
+           
+        }
+        
+        
+        
+        
+        /*while (true) 
+        {
+            
+        	String s = wd.substring(start, end);
+        	boolean status = dict1.containsKey(s);
+        	if (status == true) {
+                int get_l = s.length();
+                String get_p = Integer.toString(start);
+                start = start + get_l - 1;
+                String end_get = Integer.toString(start);
+                String get_n = get_p + "," + end_get;    
+                end = reset_index;
+                System.out.println(start+end);
+                
+            
+            }
+            if (end == start + 1) 
+            {
+                int l_ = s.length();
+                String p_ = Integer.toString(start);
+                start = start + l_ - 1;
+                String end_ = Integer.toString(start);
+                String _n = p_ + "," + end_;
+                end = reset_index;
+                System.out.println(start+","+end);
+            }
+            if (start == L - 1)
+
+            {
+                break;
+            }
+            end -= 1;
+        }*/
+        
+    }
+
+        
+   
+
+}
+/*String s = wd.substring(start, end);
+for(int i=0 ;i<end;i++)
+{
+	
+	for(int k=i ;k<end;k++)
+	{
+		start=i;
+		end=k;
+		s= s.substring(start, end);
+		System.out.println(s);
+	}
+	
+	
+}*/
+
+
+/*while (true) 
+{
+	String s="";
+    char[] ch = wd.toCharArray();
+    for(int i=start;i<end;i--)
+    {
+    	char c = wd.charAt(i);
+        String txt = String.valueOf(c);
+        s+=txt;
+    	//System.out.println(txt);
+    }
+    boolean status = dict1.containsKey(s);
+	if (status == true) 
+	{
+		int l =s.length();
+		start=start+l-1;
+		end=L;
+		System.out.println(s);
+	}
+	if (end == start + 1) 
+	{
+		int l =s.length();
+		start=start+l-1;
+		end=L;
+		System.out.println(s);
+	}
+	if (start == L - 1)
+
+    {
+        break;
+    }
+	end-=1;
+	
+	
+}*/
