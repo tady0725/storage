@@ -1,16 +1,14 @@
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 class read {
-	static Set<Integer> readfile(String url) throws IOException {
+	static String readfile(String url) throws IOException {
 		HashMap<String, String> dict1;
 		dict1 = create_dic();
 		Set<Integer> set_a = new HashSet<>();
@@ -83,7 +81,15 @@ class read {
 			}
 		}
 
-		return set_a;
+		int num_a = set_a.size();
+		int num_b = set_b.size();
+		int num_a_b = set_c.size();
+		String int_a = Integer.toString(num_a);
+		String int_b = Integer.toString(num_b);
+		String int_c = Integer.toString(num_a_b);
+
+		String sums = int_a + "," + int_b + "," + int_c;
+		return sums;
 	}
 
 	static Set<String> A_answer(String sent) {
@@ -101,6 +107,21 @@ class read {
 		}
 
 		return index;
+
+	}
+
+	static int splitedFile(String x) {
+		String s[] = x.split(",");
+		int n1 = Integer.valueOf(s[0]);
+		int n2 = Integer.valueOf(s[0]);
+		int n3 = Integer.valueOf(s[0]);
+		return 0;
+
+	}
+
+	static String str(String x) {
+
+		return x;
 
 	}
 
@@ -142,7 +163,14 @@ class read {
 class RunnableDemo implements Runnable {
 
 	public void run() {
-		String file = "D:\\DESKTOP\\NLP course\\work 1\\t1.txt";
+		String file1 = "D:\\DESKTOP\\NLP course\\work 1\\t1";
+		try {
+			String t1 = read.readfile(file1);
+			System.out.println(t1);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 	}
 
@@ -156,7 +184,14 @@ class RunnableDemo implements Runnable {
 class RunnableDemo2 implements Runnable {
 
 	public void run() {
-		String file = "D:\\DESKTOP\\NLP course\\work 1\\t2.txt";
+		String file2 = "D:\\DESKTOP\\NLP course\\work 1\\t2";
+		try {
+			String t1 = read.readfile(file2);
+			System.out.println(t1);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -171,12 +206,19 @@ class RunnableDemo2 implements Runnable {
 class RunnableDemo3 implements Runnable {
 
 	public void run() {
-		String file = "D:\\DESKTOP\\NLP course\\work 1\\t3.txt";
+		String file3 = "D:\\DESKTOP\\NLP course\\work 1\\t3";
+		try {
+			String t1 = read.readfile(file3);
+			System.out.println(t1);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
 	public void start() {
-		System.out.println("Starting ");
+
 		run();
 
 	}
@@ -186,12 +228,19 @@ class RunnableDemo3 implements Runnable {
 class RunnableDemo4 implements Runnable {
 
 	public void run() {
-		String file = "D:\\DESKTOP\\NLP course\\work 1\\t4.txt";
+		String file4 = "D:\\DESKTOP\\NLP course\\work 1\\t4";
+		try {
+			String t1 = read.readfile(file4);
+			System.out.println(t1);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
 	public void start() {
-		System.out.println("Starting ");
+
 		run();
 
 	}
@@ -201,6 +250,7 @@ class RunnableDemo4 implements Runnable {
 public class multithread {
 
 	public static void main(String args[]) throws IOException {
+		long startTime = System.currentTimeMillis();
 
 		RunnableDemo R1 = new RunnableDemo();
 		R1.start();
@@ -210,6 +260,9 @@ public class multithread {
 		R3.start();
 		RunnableDemo4 R4 = new RunnableDemo4();
 		R4.start();
+		long endTime = System.currentTimeMillis();
+		System.out.println("程式執行時間：" + (double) (endTime - startTime) / 1000 + "s");
+
 		// Set<Integer> q;
 		// q = read.readfile(file2);
 
